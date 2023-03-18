@@ -1,0 +1,11 @@
+struct OlderExtension {
+    int64 integer64;
+    string myString;
+}
+
+struct NewerExtension {
+    int64 integer64;
+    string myString;
+    bool isNewer;
+    string description;
+}
