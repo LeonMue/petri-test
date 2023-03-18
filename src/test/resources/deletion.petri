@@ -1,0 +1,13 @@
+struct NonDeletedFieldStruct {
+    int32 myInt32;
+    string hello;
+    bool isNotDeleted;
+    string world;
+}
+
+struct DeletedFieldStruct {
+    int32 myInt32;
+    @deleted string hello;
+    @deleted bool isNotDeleted;
+    string world;
+}
