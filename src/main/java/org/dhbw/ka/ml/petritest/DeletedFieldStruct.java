@@ -1,6 +1,5 @@
 package org.dhbw.ka.ml.petritest;
 
-import lombok.Data;
 import lombok.ToString;
 
 import java.io.*;
@@ -46,7 +45,7 @@ public class DeletedFieldStruct {
                 org.dhbw.ka.ml.petrilib.serializing.primitives.PetriInt.serialize(this.myInt32, out);
             }
             if (this.hasWorld()) {
-                fieldNumber = org.dhbw.ka.ml.petrilib.serializing.VarInt.serializeUnsigned(3);
+                fieldNumber = org.dhbw.ka.ml.petrilib.serializing.VarInt.serializeUnsigned(4);
                 out.write(fieldNumber);
                 org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.serialize(this.world, out);
             }
@@ -65,21 +64,27 @@ public class DeletedFieldStruct {
                 fieldNumber = org.dhbw.ka.ml.petrilib.serializing.VarInt.deserializeUnsigned(in);
                 switch (fieldNumber) {
                     case (0): {
-                        int fieldValue = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriInt.deserialize(in);
-                        value.setMyInt32(fieldValue);
+                        value.setMyInt32(org.dhbw.ka.ml.petrilib.serializing.primitives.PetriInt.deserialize(in));
                         break;
                     }
                     case (1): {
-                        String fieldValue = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.deserialize(in);
+                        org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.skip(in);
                         break;
                     }
                     case (2): {
-                        boolean fieldValue = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriBool.deserialize(in);
+                        org.dhbw.ka.ml.petrilib.serializing.primitives.PetriBool.skip(in);
                         break;
                     }
                     case (3): {
-                        String fieldValue = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.deserialize(in);
-                        value.setWorld(fieldValue);
+                        org.dhbw.ka.ml.petrilib.serializing.primitives.PetriDouble.skip(in);
+                        break;
+                    }
+                    case (4): {
+                        value.setWorld(org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.deserialize(in));
+                        break;
+                    }
+                    case (5): {
+                        org.dhbw.ka.ml.petrilib.serializing.primitives.PetriFloat.skip(in);
                         break;
                     }
                     default: {

@@ -2,6 +2,7 @@ struct NonDeletedFieldStruct {
     int32 myInt32;
     string hello;
     bool isNotDeleted;
+    float64 myFloat64;
     string world;
 }
 
@@ -9,5 +10,7 @@ struct DeletedFieldStruct {
     int32 myInt32;
     @deleted string hello;
     @deleted bool isNotDeleted;
+    @deleted float64 myFloat64;
     string world;
+    @deleted float32 neverSeen;
 }

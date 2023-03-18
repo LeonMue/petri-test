@@ -26,6 +26,7 @@ public class DeletionTest {
         nonDeleted.setMyInt32(100);
         nonDeleted.setHello("Hello");
         nonDeleted.setWorld("World");
+        nonDeleted.setMyFloat64(0.25);
 
         DeletedFieldStruct deleted = DeletedFieldStruct.deserialize(nonDeleted.serialize());
 

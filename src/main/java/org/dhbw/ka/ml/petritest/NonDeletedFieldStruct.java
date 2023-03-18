@@ -11,6 +11,8 @@ public class NonDeletedFieldStruct {
     private String hello;
     private boolean isNotDeleted;
     private boolean hasIsNotDeleted = false;
+    private double myFloat64;
+    private boolean hasMyFloat64 = false;
     private String world;
 
     public int getMyInt32() {
@@ -37,6 +39,14 @@ public class NonDeletedFieldStruct {
         return this.hasIsNotDeleted;
     }
 
+    public double getMyFloat64() {
+        return this.myFloat64;
+    }
+
+    public boolean hasMyFloat64() {
+        return this.hasMyFloat64;
+    }
+
     public String getWorld() {
         return this.world;
     }
@@ -57,6 +67,11 @@ public class NonDeletedFieldStruct {
     public void setIsNotDeleted(boolean value) {
         this.hasIsNotDeleted = true;
         this.isNotDeleted = value;
+    }
+
+    public void setMyFloat64(double value) {
+        this.hasMyFloat64 = true;
+        this.myFloat64 = value;
     }
 
     public void setWorld(String value) {
@@ -82,8 +97,13 @@ public class NonDeletedFieldStruct {
                 out.write(fieldNumber);
                 org.dhbw.ka.ml.petrilib.serializing.primitives.PetriBool.serialize(this.isNotDeleted, out);
             }
-            if (this.hasWorld()) {
+            if (this.hasMyFloat64()) {
                 fieldNumber = org.dhbw.ka.ml.petrilib.serializing.VarInt.serializeUnsigned(3);
+                out.write(fieldNumber);
+                org.dhbw.ka.ml.petrilib.serializing.primitives.PetriDouble.serialize(this.myFloat64, out);
+            }
+            if (this.hasWorld()) {
+                fieldNumber = org.dhbw.ka.ml.petrilib.serializing.VarInt.serializeUnsigned(4);
                 out.write(fieldNumber);
                 org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.serialize(this.world, out);
             }
@@ -102,23 +122,23 @@ public class NonDeletedFieldStruct {
                 fieldNumber = org.dhbw.ka.ml.petrilib.serializing.VarInt.deserializeUnsigned(in);
                 switch (fieldNumber) {
                     case (0): {
-                        int fieldValue = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriInt.deserialize(in);
-                        value.setMyInt32(fieldValue);
+                        value.setMyInt32(org.dhbw.ka.ml.petrilib.serializing.primitives.PetriInt.deserialize(in));
                         break;
                     }
                     case (1): {
-                        String fieldValue = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.deserialize(in);
-                        value.setHello(fieldValue);
+                        value.setHello(org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.deserialize(in));
                         break;
                     }
                     case (2): {
-                        boolean fieldValue = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriBool.deserialize(in);
-                        value.setIsNotDeleted(fieldValue);
+                        value.setIsNotDeleted(org.dhbw.ka.ml.petrilib.serializing.primitives.PetriBool.deserialize(in));
                         break;
                     }
                     case (3): {
-                        String fieldValue = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.deserialize(in);
-                        value.setWorld(fieldValue);
+                        value.setMyFloat64(org.dhbw.ka.ml.petrilib.serializing.primitives.PetriDouble.deserialize(in));
+                        break;
+                    }
+                    case (4): {
+                        value.setWorld(org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.deserialize(in));
                         break;
                     }
                     default: {
