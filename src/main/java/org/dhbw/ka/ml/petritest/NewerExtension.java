@@ -102,23 +102,65 @@ public class NewerExtension {
                 fieldNumber = org.dhbw.ka.ml.petrilib.serializing.VarInt.deserializeUnsigned(in);
                 switch (fieldNumber) {
                     case (0): {
-                        value.setInteger64(org.dhbw.ka.ml.petrilib.serializing.primitives.PetriLong.deserialize(in));
+                        final long deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriLong.deserialize(in);
+                        value.setInteger64(deserialized);
                         break;
                     }
                     case (1): {
-                        value.setMyString(org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.deserialize(in));
+                        final String deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.deserialize(in);
+                        value.setMyString(deserialized);
                         break;
                     }
                     case (2): {
-                        value.setIsNewer(org.dhbw.ka.ml.petrilib.serializing.primitives.PetriBool.deserialize(in));
+                        final boolean deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriBool.deserialize(in);
+                        value.setIsNewer(deserialized);
                         break;
                     }
                     case (3): {
-                        value.setDescription(org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.deserialize(in));
+                        final String deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.deserialize(in);
+                        value.setDescription(deserialized);
                         break;
                     }
                     default: {
                         return value;
+                    }
+                }
+            }
+        } catch (IOException e) {
+            throw new org.dhbw.ka.ml.petrilib.serializing.ParseException("Unable to parse message because of IOException. Sure your format is correct?", e);
+        }
+        return value;
+    }
+
+    static NewerExtension deserialize(org.dhbw.ka.ml.petrilib.io.ReadTrackingDataInput in, int length) throws org.dhbw.ka.ml.petrilib.serializing.ParseException {
+        NewerExtension value = new NewerExtension();
+        try {
+            int fieldNumber;
+            while (in.getBytesWasRead() < length) {
+                fieldNumber = org.dhbw.ka.ml.petrilib.serializing.VarInt.deserializeUnsigned(in);
+                switch (fieldNumber) {
+                    case (0): {
+                        final long deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriLong.deserialize(in);
+                        value.setInteger64(deserialized);
+                        break;
+                    }
+                    case (1): {
+                        final String deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.deserialize(in);
+                        value.setMyString(deserialized);
+                        break;
+                    }
+                    case (2): {
+                        final boolean deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriBool.deserialize(in);
+                        value.setIsNewer(deserialized);
+                        break;
+                    }
+                    case (3): {
+                        final String deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.deserialize(in);
+                        value.setDescription(deserialized);
+                        break;
+                    }
+                    default: {
+                        in.skipBytes(length - in.getBytesWasRead());
                     }
                 }
             }

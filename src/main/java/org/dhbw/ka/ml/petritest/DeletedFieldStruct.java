@@ -1,10 +1,10 @@
 package org.dhbw.ka.ml.petritest;
 
-import lombok.ToString;
+import lombok.Data;
 
 import java.io.*;
 
-@ToString
+@Data
 public class DeletedFieldStruct {
     private int myInt32;
     private boolean hasMyInt32 = false;
@@ -64,7 +64,8 @@ public class DeletedFieldStruct {
                 fieldNumber = org.dhbw.ka.ml.petrilib.serializing.VarInt.deserializeUnsigned(in);
                 switch (fieldNumber) {
                     case (0): {
-                        value.setMyInt32(org.dhbw.ka.ml.petrilib.serializing.primitives.PetriInt.deserialize(in));
+                        final int deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriInt.deserialize(in);
+                        value.setMyInt32(deserialized);
                         break;
                     }
                     case (1): {
@@ -80,7 +81,8 @@ public class DeletedFieldStruct {
                         break;
                     }
                     case (4): {
-                        value.setWorld(org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.deserialize(in));
+                        final String deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.deserialize(in);
+                        value.setWorld(deserialized);
                         break;
                     }
                     case (5): {
@@ -89,6 +91,50 @@ public class DeletedFieldStruct {
                     }
                     default: {
                         return value;
+                    }
+                }
+            }
+        } catch (IOException e) {
+            throw new org.dhbw.ka.ml.petrilib.serializing.ParseException("Unable to parse message because of IOException. Sure your format is correct?", e);
+        }
+        return value;
+    }
+
+    static DeletedFieldStruct deserialize(org.dhbw.ka.ml.petrilib.io.ReadTrackingDataInput in, int length) throws org.dhbw.ka.ml.petrilib.serializing.ParseException {
+        DeletedFieldStruct value = new DeletedFieldStruct();
+        try {
+            int fieldNumber;
+            while (in.getBytesWasRead() < length) {
+                fieldNumber = org.dhbw.ka.ml.petrilib.serializing.VarInt.deserializeUnsigned(in);
+                switch (fieldNumber) {
+                    case (0): {
+                        final int deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriInt.deserialize(in);
+                        value.setMyInt32(deserialized);
+                        break;
+                    }
+                    case (1): {
+                        org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.skip(in);
+                        break;
+                    }
+                    case (2): {
+                        org.dhbw.ka.ml.petrilib.serializing.primitives.PetriBool.skip(in);
+                        break;
+                    }
+                    case (3): {
+                        org.dhbw.ka.ml.petrilib.serializing.primitives.PetriDouble.skip(in);
+                        break;
+                    }
+                    case (4): {
+                        final String deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.deserialize(in);
+                        value.setWorld(deserialized);
+                        break;
+                    }
+                    case (5): {
+                        org.dhbw.ka.ml.petrilib.serializing.primitives.PetriFloat.skip(in);
+                        break;
+                    }
+                    default: {
+                        in.skipBytes(length - in.getBytesWasRead());
                     }
                 }
             }

@@ -1,0 +1,16 @@
+struct SimpleComplexObjectField1 {
+    string myString;
+    SimpleComplexObjectField3 complex;
+    bool myBool;
+}
+
+struct SimpleComplexObjectField2 {
+    bool myBool;
+    SimpleComplexObjectField1 complex;
+    int32 myInt;
+}
+
+struct SimpleComplexObjectField3 {
+    bool myBool;
+    float32 myFloat;
+}

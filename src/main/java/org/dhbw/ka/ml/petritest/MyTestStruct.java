@@ -1,12 +1,10 @@
 package org.dhbw.ka.ml.petritest;
 
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.Data;
 
 import java.io.*;
 
-@EqualsAndHashCode
-@ToString
+@Data
 public class MyTestStruct {
     private String string1;
     private int int1;
@@ -146,28 +144,85 @@ public class MyTestStruct {
                 fieldNumber = org.dhbw.ka.ml.petrilib.serializing.VarInt.deserializeUnsigned(in);
                 switch (fieldNumber) {
                     case (0): {
-                        value.setString1(org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.deserialize(in));
+                        final String deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.deserialize(in);
+                        value.setString1(deserialized);
                         break;
                     }
                     case (1): {
-                        value.setInt1(org.dhbw.ka.ml.petrilib.serializing.primitives.PetriInt.deserialize(in));
+                        final int deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriInt.deserialize(in);
+                        value.setInt1(deserialized);
                         break;
                     }
                     case (2): {
-                        value.setLong2(org.dhbw.ka.ml.petrilib.serializing.primitives.PetriLong.deserialize(in));
+                        final long deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriLong.deserialize(in);
+                        value.setLong2(deserialized);
                         break;
                     }
                     case (3): {
-                        value.setFloat1(org.dhbw.ka.ml.petrilib.serializing.primitives.PetriFloat.deserialize(in));
+                        final float deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriFloat.deserialize(in);
+                        value.setFloat1(deserialized);
                         break;
                     }
                     case (4): {
-                        value.setDouble1(org.dhbw.ka.ml.petrilib.serializing.primitives.PetriDouble.deserialize(in));
+                        final double deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriDouble.deserialize(in);
+                        value.setDouble1(deserialized);
                         break;
                     }
                     case (5): {
-                        value.setBool1(org.dhbw.ka.ml.petrilib.serializing.primitives.PetriBool.deserialize(in));
+                        final boolean deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriBool.deserialize(in);
+                        value.setBool1(deserialized);
                         break;
+                    }
+                    default: {
+                        return value;
+                    }
+                }
+            }
+        } catch (IOException e) {
+            throw new org.dhbw.ka.ml.petrilib.serializing.ParseException("Unable to parse message because of IOException. Sure your format is correct?", e);
+        }
+        return value;
+    }
+
+    static MyTestStruct deserialize(org.dhbw.ka.ml.petrilib.io.ReadTrackingDataInput in, int length) throws org.dhbw.ka.ml.petrilib.serializing.ParseException {
+        MyTestStruct value = new MyTestStruct();
+        try {
+            int fieldNumber;
+            while (in.getBytesWasRead() < length) {
+                fieldNumber = org.dhbw.ka.ml.petrilib.serializing.VarInt.deserializeUnsigned(in);
+                switch (fieldNumber) {
+                    case (0): {
+                        final String deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.deserialize(in);
+                        value.setString1(deserialized);
+                        break;
+                    }
+                    case (1): {
+                        final int deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriInt.deserialize(in);
+                        value.setInt1(deserialized);
+                        break;
+                    }
+                    case (2): {
+                        final long deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriLong.deserialize(in);
+                        value.setLong2(deserialized);
+                        break;
+                    }
+                    case (3): {
+                        final float deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriFloat.deserialize(in);
+                        value.setFloat1(deserialized);
+                        break;
+                    }
+                    case (4): {
+                        final double deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriDouble.deserialize(in);
+                        value.setDouble1(deserialized);
+                        break;
+                    }
+                    case (5): {
+                        final boolean deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriBool.deserialize(in);
+                        value.setBool1(deserialized);
+                        break;
+                    }
+                    default: {
+                        in.skipBytes(length - in.getBytesWasRead());
                     }
                 }
             }

@@ -1,10 +1,10 @@
 package org.dhbw.ka.ml.petritest;
 
-import lombok.ToString;
+import lombok.Data;
 
 import java.io.*;
 
-@ToString
+@Data
 public class NonDeletedFieldStruct {
     private int myInt32;
     private boolean hasMyInt32 = false;
@@ -122,27 +122,75 @@ public class NonDeletedFieldStruct {
                 fieldNumber = org.dhbw.ka.ml.petrilib.serializing.VarInt.deserializeUnsigned(in);
                 switch (fieldNumber) {
                     case (0): {
-                        value.setMyInt32(org.dhbw.ka.ml.petrilib.serializing.primitives.PetriInt.deserialize(in));
+                        final int deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriInt.deserialize(in);
+                        value.setMyInt32(deserialized);
                         break;
                     }
                     case (1): {
-                        value.setHello(org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.deserialize(in));
+                        final String deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.deserialize(in);
+                        value.setHello(deserialized);
                         break;
                     }
                     case (2): {
-                        value.setIsNotDeleted(org.dhbw.ka.ml.petrilib.serializing.primitives.PetriBool.deserialize(in));
+                        final boolean deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriBool.deserialize(in);
+                        value.setIsNotDeleted(deserialized);
                         break;
                     }
                     case (3): {
-                        value.setMyFloat64(org.dhbw.ka.ml.petrilib.serializing.primitives.PetriDouble.deserialize(in));
+                        final double deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriDouble.deserialize(in);
+                        value.setMyFloat64(deserialized);
                         break;
                     }
                     case (4): {
-                        value.setWorld(org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.deserialize(in));
+                        final String deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.deserialize(in);
+                        value.setWorld(deserialized);
                         break;
                     }
                     default: {
                         return value;
+                    }
+                }
+            }
+        } catch (IOException e) {
+            throw new org.dhbw.ka.ml.petrilib.serializing.ParseException("Unable to parse message because of IOException. Sure your format is correct?", e);
+        }
+        return value;
+    }
+
+    static NonDeletedFieldStruct deserialize(org.dhbw.ka.ml.petrilib.io.ReadTrackingDataInput in, int length) throws org.dhbw.ka.ml.petrilib.serializing.ParseException {
+        NonDeletedFieldStruct value = new NonDeletedFieldStruct();
+        try {
+            int fieldNumber;
+            while (in.getBytesWasRead() < length) {
+                fieldNumber = org.dhbw.ka.ml.petrilib.serializing.VarInt.deserializeUnsigned(in);
+                switch (fieldNumber) {
+                    case (0): {
+                        final int deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriInt.deserialize(in);
+                        value.setMyInt32(deserialized);
+                        break;
+                    }
+                    case (1): {
+                        final String deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.deserialize(in);
+                        value.setHello(deserialized);
+                        break;
+                    }
+                    case (2): {
+                        final boolean deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriBool.deserialize(in);
+                        value.setIsNotDeleted(deserialized);
+                        break;
+                    }
+                    case (3): {
+                        final double deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriDouble.deserialize(in);
+                        value.setMyFloat64(deserialized);
+                        break;
+                    }
+                    case (4): {
+                        final String deserialized = org.dhbw.ka.ml.petrilib.serializing.primitives.PetriString.deserialize(in);
+                        value.setWorld(deserialized);
+                        break;
+                    }
+                    default: {
+                        in.skipBytes(length - in.getBytesWasRead());
                     }
                 }
             }
