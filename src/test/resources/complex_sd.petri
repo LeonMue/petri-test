@@ -1,0 +1,15 @@
+struct InnerStruct {
+    string s;
+}
+
+struct OuterStruct {
+    string s1;
+    InnerStruct inner;
+    string s2;
+}
+
+struct TripleNested {
+    int32 i;
+    OuterStruct triple;
+    string s;
+}

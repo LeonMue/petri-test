@@ -1,0 +1,1 @@
+java -jar ../petri/petri/target/petri-1.0-SNAPSHOT-jar-with-dependencies.jar --petri-file src/test/resources/nested_complex_object_extension.petri --java-out src/main/java/org/dhbw/ka/ml/petritest/extension/complex/ --java-package "org.dhbw.ka.ml.petritest.extension.complex"

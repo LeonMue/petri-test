@@ -1,0 +1,15 @@
+struct NonDeletedInnerStruct {
+    string s;
+}
+
+struct NonDeletedOuterStruct {
+    int32 i;
+    NonDeletedInnerStruct inner;
+    string s;
+}
+
+struct DeletedOuterStruct {
+    int32 i;
+    @deleted NonDeletedInnerStruct inner;
+    string s;
+}

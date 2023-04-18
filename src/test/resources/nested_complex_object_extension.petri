@@ -1,0 +1,23 @@
+struct OlderInnerObject {
+    int32 i;
+}
+
+struct NewerInnerObject {
+    int32 i1;
+    int64 i2;
+    float32 f1;
+    float64 f2;
+    bool b;
+    string s1;
+    string s2;
+    int32 i3;
+    string s3;
+}
+
+struct OlderParentObject {
+    OlderInnerObject older;
+}
+
+struct NewerParentObject {
+    NewerInnerObject newer;
+}

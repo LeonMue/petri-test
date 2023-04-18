@@ -41,7 +41,7 @@
         <dependency>
             <groupId>com.github.LeonMue</groupId>
             <artifactId>petri-lib</artifactId>
-            <version>e7a551a</version>
+            <version>54cabd0</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>

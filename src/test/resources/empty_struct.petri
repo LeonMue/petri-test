@@ -1,0 +1,6 @@
+struct Empty {}
+
+struct NestedEmpty {
+    Empty empty;
+    string s;
+}

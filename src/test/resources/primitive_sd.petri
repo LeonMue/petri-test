@@ -1,0 +1,10 @@
+struct MyTestStruct {
+    string string1;
+    int32 int1;
+    int64 long2;
+    float32 float1;
+    float64 double1;
+    bool bool1;
+    string s2;
+    string s3;
+}
