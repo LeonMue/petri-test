@@ -1,12 +1,10 @@
 package org.dhbw.ka.ml.petritest.empty.lists;
 
-import lombok.EqualsAndHashCode;
-
 import java.io.*;
 import java.util.List;
 import java.util.ArrayList;
 
-@EqualsAndHashCode
+@lombok.EqualsAndHashCode
 public class L {
     private List<Empty> l1;
 

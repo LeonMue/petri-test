@@ -7,6 +7,8 @@ import org.dhbw.ka.ml.petritest.extension.complex.OlderParentObject;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 public class InnerComplexObjectExtensionTest {
 
     @Test
@@ -45,6 +47,7 @@ public class InnerComplexObjectExtensionTest {
         inner.setS1("Hello");
         inner.setS2("World");
         inner.setS3("!");
+        inner.setL(List.of("Hello", "World"));
 
         final var newerParent = new NewerParentObject();
         newerParent.setNewer(inner);

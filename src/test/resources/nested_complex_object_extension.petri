@@ -12,6 +12,7 @@ struct NewerInnerObject {
     string s2;
     int32 i3;
     string s3;
+    list<string> l;
 }
 
 struct OlderParentObject {
