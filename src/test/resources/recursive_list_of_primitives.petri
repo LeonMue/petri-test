@@ -1,0 +1,4 @@
+struct L {
+    list<list<bool>> l1;
+    list<list<list<float64>>> l2;
+}

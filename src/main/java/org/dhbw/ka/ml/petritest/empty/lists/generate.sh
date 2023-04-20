@@ -1,0 +1,2 @@
+#!/bin/bash
+java -jar $PETRI_PATH --petri-file src/test/resources/list_of_empty.petri --java-out src/main/java/org/dhbw/ka/ml/petritest/empty/lists/ --java-package "org.dhbw.ka.ml.petritest.empty.lists"

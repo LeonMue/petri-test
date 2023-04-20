@@ -1,0 +1,7 @@
+struct Empty {}
+
+struct L {
+    list<Empty> l1;             # empty list of empty struct
+    list<list<Empty>> l2;       # empty list of lists of empty
+    list<list<list<Empty>>> l3; # empty list of lists of lists of empty
+}

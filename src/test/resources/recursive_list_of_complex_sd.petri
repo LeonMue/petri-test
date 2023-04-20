@@ -1,0 +1,8 @@
+struct T {
+    list<string> l;
+    bool b;
+}
+
+struct L {
+    list<list<T>> l;
+}

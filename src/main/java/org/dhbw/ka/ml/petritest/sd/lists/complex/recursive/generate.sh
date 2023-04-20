@@ -1,0 +1,2 @@
+#!/bin/bash
+java -jar $PETRI_PATH --petri-file src/test/resources/recursive_list_of_complex_sd.petri --java-out src/main/java/org/dhbw/ka/ml/petritest/sd/lists/complex/recursive/ --java-package "org.dhbw.ka.ml.petritest.sd.lists.complex.recursive"

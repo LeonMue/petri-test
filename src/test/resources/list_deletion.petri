@@ -1,0 +1,11 @@
+struct NonDeletedListStruct {
+    int32 i;
+    list<int32> l;
+    string s;
+}
+
+struct DeletedListStruct {
+    int32 i;
+    @deleted list<int32> l;
+    string s;
+}

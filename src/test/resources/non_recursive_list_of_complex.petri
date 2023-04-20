@@ -1,0 +1,8 @@
+struct T {
+    int32 i;
+    string s;
+}
+
+struct L {
+    list<T> l1;
+}

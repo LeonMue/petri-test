@@ -1,0 +1,4 @@
+struct L {
+    list<int32> l1;
+    list<string> l2;
+}

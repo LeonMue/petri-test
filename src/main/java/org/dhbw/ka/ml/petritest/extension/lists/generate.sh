@@ -1,0 +1,2 @@
+#!/bin/bash
+java -jar $PETRI_PATH --petri-file src/test/resources/list_extension.petri --java-out src/main/java/org/dhbw/ka/ml/petritest/extension/lists/ --java-package "org.dhbw.ka.ml.petritest.extension.lists"
