@@ -1,6 +1,4 @@
 #!/bin/bash
-git clone git@github.com:LeonMue/petri.git || git pull
-cd petri/petri && ./install.sh
-cd ../../
-export PETRI_PATH=petri/petri/bin/petric.jar
+#curl https://github.com/LeonMue/petri/releases/download/petric_v1.0/petric.jar -o petric.jar
+export PETRI_PATH=../petri/petri/target/petri-1.0-SNAPSHOT-jar-with-dependencies.jar
 for f in $(find ./src/main/java/org/dhbw/ka/ml/petritest/ -name 'generate.sh'); do ./$f; done

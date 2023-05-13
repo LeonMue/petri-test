@@ -1,0 +1,23 @@
+struct ProductOrders {
+    list<Product> products;
+}
+
+struct Product {
+    string brand;
+    float64 price;
+    float64 weight;
+    int32 amount;
+    string name;
+    list<string> colors;
+}
+
+struct ProductOrdersMinimized {
+    list<ProductMinimized> products;
+}
+
+struct ProductMinimized {
+    @deleted string brand;
+    @deleted float64 price;
+    @deleted float64 weight;
+    int32 amount;
+}
