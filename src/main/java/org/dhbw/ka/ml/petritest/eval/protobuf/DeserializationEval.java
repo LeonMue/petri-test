@@ -10,19 +10,17 @@ import java.util.Arrays;
 public class DeserializationEval {
 
     public static void main(String[] args) throws IOException {
-        var toSerialize = ProductCatalogEvalDataSet.IMAGINARY.getProductOrders();
+        var toSerialize = ProductCatalogEvalDataSet.IMAGINARY.getProductCatalog();
         var serialized = toSerialize.toByteArray();
         var sizeOfSerialized = serialized.length;
-
-        PetriReader r;
 
         System.out.println("Protobuf message has size of " + sizeOfSerialized + " bytes.");
 
         var measuredDurations = new long[Constants.NUMBER_OF_DESERIALIZATION_ITERATIONS];
         for (int i = 0; i < Constants.NUMBER_OF_DESERIALIZATION_ITERATIONS; i++) {
             var begin = System.nanoTime();
-            // var serializedStream = new PetriReader(serialized);
-            var test = ProductOrders.parseFrom(serialized);
+            var serializedStream = new PetriReader(serialized);
+            var test = ProductCatalog.parseFrom(serializedStream);
             var end = System.nanoTime();
             var duration = end - begin;
             measuredDurations[i] = duration;

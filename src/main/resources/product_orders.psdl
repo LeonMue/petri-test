@@ -1,23 +1,20 @@
-struct ProductOrders {
+struct ProductCatalog {
+    string name;
+    string description;
+    list<Category> categories;
+}
+
+struct Category {
+    string name;
+    string description;
     list<Product> products;
 }
 
 struct Product {
-    string brand;
-    float64 price;
-    float64 weight;
-    int32 amount;
     string name;
+    string brand;
+    int32 price;
+    float64 weight;
+    bool available;
     list<string> colors;
-}
-
-struct ProductOrdersMinimized {
-    list<ProductMinimized> products;
-}
-
-struct ProductMinimized {
-    @deleted string brand;
-    @deleted float64 price;
-    @deleted float64 weight;
-    int32 amount;
 }

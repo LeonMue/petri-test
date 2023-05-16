@@ -15,25 +15,20 @@ public final class ProductOrdersProtos {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_tutorial_ProductOrders_descriptor;
+    internal_static_tutorial_ProductCatalog_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_tutorial_ProductOrders_fieldAccessorTable;
+      internal_static_tutorial_ProductCatalog_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_tutorial_Category_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_tutorial_Category_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tutorial_Product_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tutorial_Product_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_tutorial_ProductOrdersMinimized_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_tutorial_ProductOrdersMinimized_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_tutorial_ProductMinimized_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_tutorial_ProductMinimized_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -44,44 +39,39 @@ public final class ProductOrdersProtos {
   static {
     java.lang.String[] descriptorData = {
       "\n\'src/main/resources/product_orders.prot" +
-      "o\022\010tutorial\"4\n\rProductOrders\022#\n\010products" +
-      "\030\001 \003(\0132\021.tutorial.Product\"e\n\007Product\022\r\n\005" +
-      "brand\030\001 \001(\t\022\r\n\005price\030\002 \001(\001\022\016\n\006weight\030\003 \001" +
-      "(\001\022\016\n\006amount\030\004 \001(\005\022\014\n\004name\030\005 \001(\t\022\016\n\006colo" +
-      "rs\030\006 \003(\t\"F\n\026ProductOrdersMinimized\022,\n\010pr" +
-      "oducts\030\001 \003(\0132\032.tutorial.ProductMinimized" +
-      "\"\"\n\020ProductMinimized\022\016\n\006amount\030\004 \001(\005B?\n&" +
-      "org.dhbw.ka.ml.petritest.eval.protobufB\023" +
-      "ProductOrdersProtosP\001b\006proto3"
+      "o\022\010tutorial\"[\n\016ProductCatalog\022\014\n\004name\030\001 " +
+      "\001(\t\022\023\n\013description\030\002 \001(\t\022&\n\ncategories\030\003" +
+      " \003(\0132\022.tutorial.Category\"R\n\010Category\022\014\n\004" +
+      "name\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\022#\n\010produ" +
+      "cts\030\003 \003(\0132\021.tutorial.Product\"h\n\007Product\022" +
+      "\014\n\004name\030\001 \001(\t\022\r\n\005brand\030\002 \001(\t\022\r\n\005price\030\003 " +
+      "\001(\021\022\016\n\006weight\030\004 \001(\001\022\021\n\tavailable\030\005 \001(\010\022\016" +
+      "\n\006colors\030\006 \003(\tB?\n&org.dhbw.ka.ml.petrite" +
+      "st.eval.protobufB\023ProductOrdersProtosP\001b" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_tutorial_ProductOrders_descriptor =
+    internal_static_tutorial_ProductCatalog_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_tutorial_ProductOrders_fieldAccessorTable = new
+    internal_static_tutorial_ProductCatalog_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_tutorial_ProductOrders_descriptor,
-        new java.lang.String[] { "Products", });
-    internal_static_tutorial_Product_descriptor =
+        internal_static_tutorial_ProductCatalog_descriptor,
+        new java.lang.String[] { "Name", "Description", "Categories", });
+    internal_static_tutorial_Category_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_tutorial_Category_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_tutorial_Category_descriptor,
+        new java.lang.String[] { "Name", "Description", "Products", });
+    internal_static_tutorial_Product_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_tutorial_Product_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tutorial_Product_descriptor,
-        new java.lang.String[] { "Brand", "Price", "Weight", "Amount", "Name", "Colors", });
-    internal_static_tutorial_ProductOrdersMinimized_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_tutorial_ProductOrdersMinimized_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_tutorial_ProductOrdersMinimized_descriptor,
-        new java.lang.String[] { "Products", });
-    internal_static_tutorial_ProductMinimized_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_tutorial_ProductMinimized_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_tutorial_ProductMinimized_descriptor,
-        new java.lang.String[] { "Amount", });
+        new java.lang.String[] { "Name", "Brand", "Price", "Weight", "Available", "Colors", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

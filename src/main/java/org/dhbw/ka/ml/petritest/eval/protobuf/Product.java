@@ -16,8 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Product() {
-    brand_ = "";
     name_ = "";
+    brand_ = "";
     colors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
@@ -46,81 +46,10 @@ private static final long serialVersionUID = 0L;
             org.dhbw.ka.ml.petritest.eval.protobuf.Product.class, org.dhbw.ka.ml.petritest.eval.protobuf.Product.Builder.class);
   }
 
-  public static final int BRAND_FIELD_NUMBER = 1;
-  private volatile java.lang.Object brand_;
-  /**
-   * <code>string brand = 1;</code>
-   * @return The brand.
-   */
-  @java.lang.Override
-  public java.lang.String getBrand() {
-    java.lang.Object ref = brand_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      brand_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string brand = 1;</code>
-   * @return The bytes for brand.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getBrandBytes() {
-    java.lang.Object ref = brand_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      brand_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int PRICE_FIELD_NUMBER = 2;
-  private double price_;
-  /**
-   * <code>double price = 2;</code>
-   * @return The price.
-   */
-  @java.lang.Override
-  public double getPrice() {
-    return price_;
-  }
-
-  public static final int WEIGHT_FIELD_NUMBER = 3;
-  private double weight_;
-  /**
-   * <code>double weight = 3;</code>
-   * @return The weight.
-   */
-  @java.lang.Override
-  public double getWeight() {
-    return weight_;
-  }
-
-  public static final int AMOUNT_FIELD_NUMBER = 4;
-  private int amount_;
-  /**
-   * <code>int32 amount = 4;</code>
-   * @return The amount.
-   */
-  @java.lang.Override
-  public int getAmount() {
-    return amount_;
-  }
-
-  public static final int NAME_FIELD_NUMBER = 5;
+  public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
-   * <code>string name = 5;</code>
+   * <code>string name = 1;</code>
    * @return The name.
    */
   @java.lang.Override
@@ -137,7 +66,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string name = 5;</code>
+   * <code>string name = 1;</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -155,9 +84,84 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int BRAND_FIELD_NUMBER = 2;
+  private volatile java.lang.Object brand_;
+  /**
+   * <code>string brand = 2;</code>
+   * @return The brand.
+   */
+  @java.lang.Override
+  public java.lang.String getBrand() {
+    java.lang.Object ref = brand_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      brand_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string brand = 2;</code>
+   * @return The bytes for brand.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getBrandBytes() {
+    java.lang.Object ref = brand_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      brand_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PRICE_FIELD_NUMBER = 3;
+  private int price_;
+  /**
+   * <code>sint32 price = 3;</code>
+   * @return The price.
+   */
+  @java.lang.Override
+  public int getPrice() {
+    return price_;
+  }
+
+  public static final int WEIGHT_FIELD_NUMBER = 4;
+  private double weight_;
+  /**
+   * <code>double weight = 4;</code>
+   * @return The weight.
+   */
+  @java.lang.Override
+  public double getWeight() {
+    return weight_;
+  }
+
+  public static final int AVAILABLE_FIELD_NUMBER = 5;
+  private boolean available_;
+  /**
+   * <code>bool available = 5;</code>
+   * @return The available.
+   */
+  @java.lang.Override
+  public boolean getAvailable() {
+    return available_;
+  }
+
   public static final int COLORS_FIELD_NUMBER = 6;
   private com.google.protobuf.LazyStringList colors_;
   /**
+   * <pre>
+   * Person owner = 7;
+   * </pre>
+   *
    * <code>repeated string colors = 6;</code>
    * @return A list containing the colors.
    */
@@ -166,6 +170,10 @@ private static final long serialVersionUID = 0L;
     return colors_;
   }
   /**
+   * <pre>
+   * Person owner = 7;
+   * </pre>
+   *
    * <code>repeated string colors = 6;</code>
    * @return The count of colors.
    */
@@ -173,6 +181,10 @@ private static final long serialVersionUID = 0L;
     return colors_.size();
   }
   /**
+   * <pre>
+   * Person owner = 7;
+   * </pre>
+   *
    * <code>repeated string colors = 6;</code>
    * @param index The index of the element to return.
    * @return The colors at the given index.
@@ -181,6 +193,10 @@ private static final long serialVersionUID = 0L;
     return colors_.get(index);
   }
   /**
+   * <pre>
+   * Person owner = 7;
+   * </pre>
+   *
    * <code>repeated string colors = 6;</code>
    * @param index The index of the value to return.
    * @return The bytes of the colors at the given index.
@@ -204,20 +220,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(brand_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, brand_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (java.lang.Double.doubleToRawLongBits(price_) != 0) {
-      output.writeDouble(2, price_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(brand_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, brand_);
+    }
+    if (price_ != 0) {
+      output.writeSInt32(3, price_);
     }
     if (java.lang.Double.doubleToRawLongBits(weight_) != 0) {
-      output.writeDouble(3, weight_);
+      output.writeDouble(4, weight_);
     }
-    if (amount_ != 0) {
-      output.writeInt32(4, amount_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name_);
+    if (available_ != false) {
+      output.writeBool(5, available_);
     }
     for (int i = 0; i < colors_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, colors_.getRaw(i));
@@ -231,23 +247,23 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(brand_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, brand_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (java.lang.Double.doubleToRawLongBits(price_) != 0) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(brand_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, brand_);
+    }
+    if (price_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(2, price_);
+        .computeSInt32Size(3, price_);
     }
     if (java.lang.Double.doubleToRawLongBits(weight_) != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(3, weight_);
+        .computeDoubleSize(4, weight_);
     }
-    if (amount_ != 0) {
+    if (available_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(4, amount_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, name_);
+        .computeBoolSize(5, available_);
     }
     {
       int dataSize = 0;
@@ -272,18 +288,17 @@ private static final long serialVersionUID = 0L;
     }
     org.dhbw.ka.ml.petritest.eval.protobuf.Product other = (org.dhbw.ka.ml.petritest.eval.protobuf.Product) obj;
 
+    if (!getName()
+        .equals(other.getName())) return false;
     if (!getBrand()
         .equals(other.getBrand())) return false;
-    if (java.lang.Double.doubleToLongBits(getPrice())
-        != java.lang.Double.doubleToLongBits(
-            other.getPrice())) return false;
+    if (getPrice()
+        != other.getPrice()) return false;
     if (java.lang.Double.doubleToLongBits(getWeight())
         != java.lang.Double.doubleToLongBits(
             other.getWeight())) return false;
-    if (getAmount()
-        != other.getAmount()) return false;
-    if (!getName()
-        .equals(other.getName())) return false;
+    if (getAvailable()
+        != other.getAvailable()) return false;
     if (!getColorsList()
         .equals(other.getColorsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -297,18 +312,18 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + BRAND_FIELD_NUMBER;
     hash = (53 * hash) + getBrand().hashCode();
     hash = (37 * hash) + PRICE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getPrice()));
+    hash = (53 * hash) + getPrice();
     hash = (37 * hash) + WEIGHT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         java.lang.Double.doubleToLongBits(getWeight()));
-    hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getAmount();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + AVAILABLE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getAvailable());
     if (getColorsCount() > 0) {
       hash = (37 * hash) + COLORS_FIELD_NUMBER;
       hash = (53 * hash) + getColorsList().hashCode();
@@ -441,15 +456,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      name_ = "";
+
       brand_ = "";
 
-      price_ = 0D;
+      price_ = 0;
 
       weight_ = 0D;
 
-      amount_ = 0;
-
-      name_ = "";
+      available_ = false;
 
       colors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -480,11 +495,11 @@ private static final long serialVersionUID = 0L;
     public org.dhbw.ka.ml.petritest.eval.protobuf.Product buildPartial() {
       org.dhbw.ka.ml.petritest.eval.protobuf.Product result = new org.dhbw.ka.ml.petritest.eval.protobuf.Product(this);
       int from_bitField0_ = bitField0_;
+      result.name_ = name_;
       result.brand_ = brand_;
       result.price_ = price_;
       result.weight_ = weight_;
-      result.amount_ = amount_;
-      result.name_ = name_;
+      result.available_ = available_;
       if (((bitField0_ & 0x00000001) != 0)) {
         colors_ = colors_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -538,22 +553,22 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(org.dhbw.ka.ml.petritest.eval.protobuf.Product other) {
       if (other == org.dhbw.ka.ml.petritest.eval.protobuf.Product.getDefaultInstance()) return this;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
+      }
       if (!other.getBrand().isEmpty()) {
         brand_ = other.brand_;
         onChanged();
       }
-      if (other.getPrice() != 0D) {
+      if (other.getPrice() != 0) {
         setPrice(other.getPrice());
       }
       if (other.getWeight() != 0D) {
         setWeight(other.getWeight());
       }
-      if (other.getAmount() != 0) {
-        setAmount(other.getAmount());
-      }
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
-        onChanged();
+      if (other.getAvailable() != false) {
+        setAvailable(other.getAvailable());
       }
       if (!other.colors_.isEmpty()) {
         if (colors_.isEmpty()) {
@@ -592,30 +607,30 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              brand_ = input.readStringRequireUtf8();
-
-              break;
-            } // case 10
-            case 17: {
-              price_ = input.readDouble();
-
-              break;
-            } // case 17
-            case 25: {
-              weight_ = input.readDouble();
-
-              break;
-            } // case 25
-            case 32: {
-              amount_ = input.readInt32();
-
-              break;
-            } // case 32
-            case 42: {
               name_ = input.readStringRequireUtf8();
 
               break;
-            } // case 42
+            } // case 10
+            case 18: {
+              brand_ = input.readStringRequireUtf8();
+
+              break;
+            } // case 18
+            case 24: {
+              price_ = input.readSInt32();
+
+              break;
+            } // case 24
+            case 33: {
+              weight_ = input.readDouble();
+
+              break;
+            } // case 33
+            case 40: {
+              available_ = input.readBool();
+
+              break;
+            } // case 40
             case 50: {
               java.lang.String s = input.readStringRequireUtf8();
               ensureColorsIsMutable();
@@ -639,178 +654,9 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.lang.Object brand_ = "";
-    /**
-     * <code>string brand = 1;</code>
-     * @return The brand.
-     */
-    public java.lang.String getBrand() {
-      java.lang.Object ref = brand_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        brand_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string brand = 1;</code>
-     * @return The bytes for brand.
-     */
-    public com.google.protobuf.ByteString
-        getBrandBytes() {
-      java.lang.Object ref = brand_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        brand_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string brand = 1;</code>
-     * @param value The brand to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBrand(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      brand_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string brand = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearBrand() {
-      
-      brand_ = getDefaultInstance().getBrand();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string brand = 1;</code>
-     * @param value The bytes for brand to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBrandBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      brand_ = value;
-      onChanged();
-      return this;
-    }
-
-    private double price_ ;
-    /**
-     * <code>double price = 2;</code>
-     * @return The price.
-     */
-    @java.lang.Override
-    public double getPrice() {
-      return price_;
-    }
-    /**
-     * <code>double price = 2;</code>
-     * @param value The price to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPrice(double value) {
-      
-      price_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>double price = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearPrice() {
-      
-      price_ = 0D;
-      onChanged();
-      return this;
-    }
-
-    private double weight_ ;
-    /**
-     * <code>double weight = 3;</code>
-     * @return The weight.
-     */
-    @java.lang.Override
-    public double getWeight() {
-      return weight_;
-    }
-    /**
-     * <code>double weight = 3;</code>
-     * @param value The weight to set.
-     * @return This builder for chaining.
-     */
-    public Builder setWeight(double value) {
-      
-      weight_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>double weight = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearWeight() {
-      
-      weight_ = 0D;
-      onChanged();
-      return this;
-    }
-
-    private int amount_ ;
-    /**
-     * <code>int32 amount = 4;</code>
-     * @return The amount.
-     */
-    @java.lang.Override
-    public int getAmount() {
-      return amount_;
-    }
-    /**
-     * <code>int32 amount = 4;</code>
-     * @param value The amount to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAmount(int value) {
-      
-      amount_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int32 amount = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearAmount() {
-      
-      amount_ = 0;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object name_ = "";
     /**
-     * <code>string name = 5;</code>
+     * <code>string name = 1;</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -826,7 +672,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string name = 5;</code>
+     * <code>string name = 1;</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -843,7 +689,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string name = 5;</code>
+     * <code>string name = 1;</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -858,7 +704,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string name = 5;</code>
+     * <code>string name = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -868,7 +714,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string name = 5;</code>
+     * <code>string name = 1;</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -884,6 +730,175 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object brand_ = "";
+    /**
+     * <code>string brand = 2;</code>
+     * @return The brand.
+     */
+    public java.lang.String getBrand() {
+      java.lang.Object ref = brand_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        brand_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string brand = 2;</code>
+     * @return The bytes for brand.
+     */
+    public com.google.protobuf.ByteString
+        getBrandBytes() {
+      java.lang.Object ref = brand_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        brand_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string brand = 2;</code>
+     * @param value The brand to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBrand(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      brand_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string brand = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearBrand() {
+      
+      brand_ = getDefaultInstance().getBrand();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string brand = 2;</code>
+     * @param value The bytes for brand to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBrandBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      brand_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int price_ ;
+    /**
+     * <code>sint32 price = 3;</code>
+     * @return The price.
+     */
+    @java.lang.Override
+    public int getPrice() {
+      return price_;
+    }
+    /**
+     * <code>sint32 price = 3;</code>
+     * @param value The price to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrice(int value) {
+      
+      price_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>sint32 price = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPrice() {
+      
+      price_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private double weight_ ;
+    /**
+     * <code>double weight = 4;</code>
+     * @return The weight.
+     */
+    @java.lang.Override
+    public double getWeight() {
+      return weight_;
+    }
+    /**
+     * <code>double weight = 4;</code>
+     * @param value The weight to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWeight(double value) {
+      
+      weight_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>double weight = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearWeight() {
+      
+      weight_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private boolean available_ ;
+    /**
+     * <code>bool available = 5;</code>
+     * @return The available.
+     */
+    @java.lang.Override
+    public boolean getAvailable() {
+      return available_;
+    }
+    /**
+     * <code>bool available = 5;</code>
+     * @param value The available to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAvailable(boolean value) {
+      
+      available_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool available = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAvailable() {
+      
+      available_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringList colors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureColorsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
@@ -892,6 +907,10 @@ private static final long serialVersionUID = 0L;
        }
     }
     /**
+     * <pre>
+     * Person owner = 7;
+     * </pre>
+     *
      * <code>repeated string colors = 6;</code>
      * @return A list containing the colors.
      */
@@ -900,6 +919,10 @@ private static final long serialVersionUID = 0L;
       return colors_.getUnmodifiableView();
     }
     /**
+     * <pre>
+     * Person owner = 7;
+     * </pre>
+     *
      * <code>repeated string colors = 6;</code>
      * @return The count of colors.
      */
@@ -907,6 +930,10 @@ private static final long serialVersionUID = 0L;
       return colors_.size();
     }
     /**
+     * <pre>
+     * Person owner = 7;
+     * </pre>
+     *
      * <code>repeated string colors = 6;</code>
      * @param index The index of the element to return.
      * @return The colors at the given index.
@@ -915,6 +942,10 @@ private static final long serialVersionUID = 0L;
       return colors_.get(index);
     }
     /**
+     * <pre>
+     * Person owner = 7;
+     * </pre>
+     *
      * <code>repeated string colors = 6;</code>
      * @param index The index of the value to return.
      * @return The bytes of the colors at the given index.
@@ -924,6 +955,10 @@ private static final long serialVersionUID = 0L;
       return colors_.getByteString(index);
     }
     /**
+     * <pre>
+     * Person owner = 7;
+     * </pre>
+     *
      * <code>repeated string colors = 6;</code>
      * @param index The index to set the value at.
      * @param value The colors to set.
@@ -940,6 +975,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Person owner = 7;
+     * </pre>
+     *
      * <code>repeated string colors = 6;</code>
      * @param value The colors to add.
      * @return This builder for chaining.
@@ -955,6 +994,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Person owner = 7;
+     * </pre>
+     *
      * <code>repeated string colors = 6;</code>
      * @param values The colors to add.
      * @return This builder for chaining.
@@ -968,6 +1011,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Person owner = 7;
+     * </pre>
+     *
      * <code>repeated string colors = 6;</code>
      * @return This builder for chaining.
      */
@@ -978,6 +1025,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Person owner = 7;
+     * </pre>
+     *
      * <code>repeated string colors = 6;</code>
      * @param value The bytes of the colors to add.
      * @return This builder for chaining.

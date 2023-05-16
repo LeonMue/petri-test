@@ -7,23 +7,24 @@ option java_package = "org.dhbw.ka.ml.petritest.eval.protobuf";
 option java_outer_classname = "ProductOrdersProtos";
 
 
-message ProductOrders {
-  repeated Product products = 1;
+message ProductCatalog {
+  string name = 1;
+  string description = 2;
+  repeated Category categories = 3;
+}
+
+message Category {
+  string name = 1;
+  string description = 2;
+  repeated Product products = 3;
 }
 
 message Product {
-  string brand = 1;
-  double price = 2;
-  double weight = 3;
-  int32 amount = 4;
-  string name = 5;
+  string name = 1;
+  string brand = 2;
+  sint32 price = 3;
+  double weight = 4;
+  bool available = 5;
   repeated string colors = 6;
-}
-
-message ProductOrdersMinimized {
-  repeated ProductMinimized products = 1;
-}
-
-message ProductMinimized {
-  int32 amount = 4;
+  // Person owner = 7;
 }

@@ -8,50 +8,173 @@ import java.util.List;
 @Getter
 public enum ProductCatalogEvalDataSet {
 
-    IMAGINARY;
+    IMAGINARY,
+    IMAGINARY_WITH_UNSET_FIELDS;
 
-    private ProductOrders productCatalog;
+    private ProductCatalog productCatalog;
 
     static {
         // IMAGINARY
+        {
+            var productCatalog = new ProductCatalog();
+            productCatalog.setName("Electronics");
+            productCatalog.setDescription("A catalog of electronic products");
 
-        var productOrders = new ProductOrders();
+            List<Category> categories = new ArrayList<>();
 
-        var productSmartPhoneA = new Product();
-        productSmartPhoneA.setAmount(5);
-        productSmartPhoneA.setName("Smartphone A");
-        productSmartPhoneA.setPrice(999);
-        productSmartPhoneA.setWeight(0.5);
-        productSmartPhoneA.setBrand("Brand X");
-        productSmartPhoneA.setColors(List.of("Black", "White", "Blue"));
+            var computersCategory = new Category();
+            computersCategory.setName("Computers");
+            computersCategory.setDescription("Computing devices");
 
-        var productSmartphoneB = new Product();
-        productSmartphoneB.setColors(List.of("Red", "White", "Black"));
-        productSmartphoneB.setWeight(0.6);
-        productSmartphoneB.setPrice(800);
-        productSmartphoneB.setBrand("Brand Y");
-        productSmartphoneB.setName("Smartphone B");
-        productSmartphoneB.setAmount(10);
+            List<Product> computerProducts = new ArrayList<>();
 
-        var productLaptopA = new Product();
-        productLaptopA.setColors(List.of("Black", "Silver"));
-        productLaptopA.setWeight(2.5);
-        productLaptopA.setBrand("Brand X");
-        productLaptopA.setPrice(1200.99);
-        productLaptopA.setAmount(1);
-        productLaptopA.setName("Laptop A");
+            var laptopProduct = new Product();
+            laptopProduct.setName("Laptop");
+            laptopProduct.setBrand("Brand X");
+            laptopProduct.setPrice(999);
+            laptopProduct.setWeight(2.5);
+            laptopProduct.setAvailable(true);
+            List<String> laptopColors = new ArrayList<>();
+            laptopColors.add("Silver");
+            laptopColors.add("Black");
+            laptopProduct.setColors(laptopColors);
 
-        var productEarplug = new Product();
-        productEarplug.setName("Earplugs Deluxe");
-        productEarplug.setAmount(200);
-        productEarplug.setBrand("The Earplug Company");
-        productEarplug.setPrice(1.99);
-        productEarplug.setWeight(0.01);
-        productEarplug.setColors(List.of("White"));
+            var desktopProduct = new Product();
+            desktopProduct.setName("Desktop");
+            desktopProduct.setBrand("Brand Y");
+            desktopProduct.setPrice(899);
+            desktopProduct.setWeight(8.2);
+            desktopProduct.setAvailable(false);
+            List<String> desktopColors = new ArrayList<>();
+            desktopColors.add("White");
+            desktopProduct.setColors(desktopColors);
 
-        productOrders.setProducts(List.of(productSmartPhoneA, productSmartphoneB, productLaptopA, productEarplug));
+            computerProducts.add(laptopProduct);
+            computerProducts.add(desktopProduct);
 
-        IMAGINARY.productCatalog = productOrders;
+            computersCategory.setProducts(computerProducts);
+
+            var mobilePhonesCategory = new Category();
+            mobilePhonesCategory.setName("Mobile Phones");
+            mobilePhonesCategory.setDescription("Smartphones and cell phones");
+
+            List<Product> mobilePhoneProducts = new ArrayList<>();
+
+            var smartphoneAProduct = new Product();
+            smartphoneAProduct.setName("Smartphone A");
+            smartphoneAProduct.setBrand("Brand Z");
+            smartphoneAProduct.setPrice(699);
+            smartphoneAProduct.setWeight(0.4);
+            smartphoneAProduct.setAvailable(true);
+            List<String> smartphoneAColors = new ArrayList<>();
+            smartphoneAColors.add("Black");
+            smartphoneAColors.add("Blue");
+            smartphoneAProduct.setColors(smartphoneAColors);
+
+            var smartphoneBProduct = new Product();
+            smartphoneBProduct.setName("Smartphone B");
+            smartphoneBProduct.setBrand("Brand X");
+            smartphoneBProduct.setPrice(799);
+            smartphoneBProduct.setWeight(0.5);
+            smartphoneBProduct.setAvailable(true);
+            List<String> smartphoneBColors = new ArrayList<>();
+            smartphoneBColors.add("Silver");
+            smartphoneBColors.add("Gold");
+            smartphoneBProduct.setColors(smartphoneBColors);
+
+            mobilePhoneProducts.add(smartphoneAProduct);
+            mobilePhoneProducts.add(smartphoneBProduct);
+
+            mobilePhonesCategory.setProducts(mobilePhoneProducts);
+
+            categories.add(computersCategory);
+            categories.add(mobilePhonesCategory);
+
+            productCatalog.setCategories(categories);
+
+            IMAGINARY.productCatalog = productCatalog;
+        }
+
+        {
+            var productCatalog = new ProductCatalog();
+
+            productCatalog.setName("Electronics");
+            // productCatalog.setDescription("A catalog of electronic products");
+
+            List<Category> categories = new ArrayList<>();
+
+            var computersCategory = new Category();
+            computersCategory.setName("Computers");
+            // computersCategory.setDescription("Computing devices");
+
+            List<Product> computerProducts = new ArrayList<>();
+
+            var laptopProduct = new Product();
+            laptopProduct.setName("Laptop");
+            // laptopProduct.setBrand("Brand X");
+            laptopProduct.setPrice(999);
+            // laptopProduct.setWeight(2.5);
+            laptopProduct.setAvailable(true);
+            // List<String> laptopColors = new ArrayList<>();
+            // laptopColors.add("Silver");
+            // laptopColors.add("Black");
+            // laptopProduct.setColors(laptopColors);
+
+            var desktopProduct = new Product();
+            desktopProduct.setName("Desktop");
+            // desktopProduct.setBrand("Brand Y");
+            desktopProduct.setPrice(899);
+            // desktopProduct.setWeight(8.2);
+            desktopProduct.setAvailable(false);
+            // List<String> desktopColors = new ArrayList<>();
+            // desktopColors.add("White");
+            // desktopProduct.setColors(desktopColors);
+
+            computerProducts.add(laptopProduct);
+            computerProducts.add(desktopProduct);
+
+            computersCategory.setProducts(computerProducts);
+
+            var mobilePhonesCategory = new Category();
+            // mobilePhonesCategory.setName("Mobile Phones");
+            mobilePhonesCategory.setDescription("Smartphones and cell phones");
+
+            List<Product> mobilePhoneProducts = new ArrayList<>();
+
+            var smartphoneAProduct = new Product();
+            // smartphoneAProduct.setName("Smartphone A");
+            smartphoneAProduct.setBrand("Brand Z");
+            // smartphoneAProduct.setPrice(699);
+            smartphoneAProduct.setWeight(0.4);
+            // smartphoneAProduct.setAvailable(true);
+            List<String> smartphoneAColors = new ArrayList<>();
+            smartphoneAColors.add("Black");
+            smartphoneAColors.add("Blue");
+            smartphoneAProduct.setColors(smartphoneAColors);
+
+            var smartphoneBProduct = new Product();
+            // smartphoneBProduct.setName("Smartphone B");
+            smartphoneBProduct.setBrand("Brand X");
+            smartphoneBProduct.setPrice(799);
+            // smartphoneBProduct.setWeight(0.5);
+            smartphoneBProduct.setAvailable(true);
+            List<String> smartphoneBColors = new ArrayList<>();
+            smartphoneBColors.add("Silver");
+            smartphoneBColors.add("Gold");
+            smartphoneBProduct.setColors(smartphoneBColors);
+
+            mobilePhoneProducts.add(smartphoneAProduct);
+            mobilePhoneProducts.add(smartphoneBProduct);
+
+            mobilePhonesCategory.setProducts(mobilePhoneProducts);
+
+            categories.add(computersCategory);
+            categories.add(mobilePhonesCategory);
+
+            productCatalog.setCategories(categories);
+
+            IMAGINARY_WITH_UNSET_FIELDS.productCatalog = productCatalog;
+        }
     }
 
 }

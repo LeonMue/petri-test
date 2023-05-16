@@ -4,18 +4,20 @@
 package org.dhbw.ka.ml.petritest.eval.protobuf;
 
 /**
- * Protobuf type {@code tutorial.ProductOrdersMinimized}
+ * Protobuf type {@code tutorial.Category}
  */
-public final class ProductOrdersMinimized extends
+public final class Category extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:tutorial.ProductOrdersMinimized)
-    ProductOrdersMinimizedOrBuilder {
+    // @@protoc_insertion_point(message_implements:tutorial.Category)
+    CategoryOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ProductOrdersMinimized.newBuilder() to construct.
-  private ProductOrdersMinimized(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use Category.newBuilder() to construct.
+  private Category(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ProductOrdersMinimized() {
+  private Category() {
+    name_ = "";
+    description_ = "";
     products_ = java.util.Collections.emptyList();
   }
 
@@ -23,7 +25,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new ProductOrdersMinimized();
+    return new Category();
   }
 
   @java.lang.Override
@@ -33,53 +35,129 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersProtos.internal_static_tutorial_ProductOrdersMinimized_descriptor;
+    return org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersProtos.internal_static_tutorial_Category_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersProtos.internal_static_tutorial_ProductOrdersMinimized_fieldAccessorTable
+    return org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersProtos.internal_static_tutorial_Category_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized.class, org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized.Builder.class);
+            org.dhbw.ka.ml.petritest.eval.protobuf.Category.class, org.dhbw.ka.ml.petritest.eval.protobuf.Category.Builder.class);
   }
 
-  public static final int PRODUCTS_FIELD_NUMBER = 1;
-  private java.util.List<org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimized> products_;
+  public static final int NAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object name_;
   /**
-   * <code>repeated .tutorial.ProductMinimized products = 1;</code>
+   * <code>string name = 1;</code>
+   * @return The name.
    */
   @java.lang.Override
-  public java.util.List<org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimized> getProductsList() {
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string name = 1;</code>
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DESCRIPTION_FIELD_NUMBER = 2;
+  private volatile java.lang.Object description_;
+  /**
+   * <code>string description = 2;</code>
+   * @return The description.
+   */
+  @java.lang.Override
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string description = 2;</code>
+   * @return The bytes for description.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PRODUCTS_FIELD_NUMBER = 3;
+  private java.util.List<org.dhbw.ka.ml.petritest.eval.protobuf.Product> products_;
+  /**
+   * <code>repeated .tutorial.Product products = 3;</code>
+   */
+  @java.lang.Override
+  public java.util.List<org.dhbw.ka.ml.petritest.eval.protobuf.Product> getProductsList() {
     return products_;
   }
   /**
-   * <code>repeated .tutorial.ProductMinimized products = 1;</code>
+   * <code>repeated .tutorial.Product products = 3;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimizedOrBuilder> 
+  public java.util.List<? extends org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrBuilder> 
       getProductsOrBuilderList() {
     return products_;
   }
   /**
-   * <code>repeated .tutorial.ProductMinimized products = 1;</code>
+   * <code>repeated .tutorial.Product products = 3;</code>
    */
   @java.lang.Override
   public int getProductsCount() {
     return products_.size();
   }
   /**
-   * <code>repeated .tutorial.ProductMinimized products = 1;</code>
+   * <code>repeated .tutorial.Product products = 3;</code>
    */
   @java.lang.Override
-  public org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimized getProducts(int index) {
+  public org.dhbw.ka.ml.petritest.eval.protobuf.Product getProducts(int index) {
     return products_.get(index);
   }
   /**
-   * <code>repeated .tutorial.ProductMinimized products = 1;</code>
+   * <code>repeated .tutorial.Product products = 3;</code>
    */
   @java.lang.Override
-  public org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimizedOrBuilder getProductsOrBuilder(
+  public org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrBuilder getProductsOrBuilder(
       int index) {
     return products_.get(index);
   }
@@ -98,8 +176,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
+    }
     for (int i = 0; i < products_.size(); i++) {
-      output.writeMessage(1, products_.get(i));
+      output.writeMessage(3, products_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -110,9 +194,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
+    }
     for (int i = 0; i < products_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, products_.get(i));
+        .computeMessageSize(3, products_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -124,11 +214,15 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized)) {
+    if (!(obj instanceof org.dhbw.ka.ml.petritest.eval.protobuf.Category)) {
       return super.equals(obj);
     }
-    org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized other = (org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized) obj;
+    org.dhbw.ka.ml.petritest.eval.protobuf.Category other = (org.dhbw.ka.ml.petritest.eval.protobuf.Category) obj;
 
+    if (!getName()
+        .equals(other.getName())) return false;
+    if (!getDescription()
+        .equals(other.getDescription())) return false;
     if (!getProductsList()
         .equals(other.getProductsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -142,6 +236,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
     if (getProductsCount() > 0) {
       hash = (37 * hash) + PRODUCTS_FIELD_NUMBER;
       hash = (53 * hash) + getProductsList().hashCode();
@@ -151,69 +249,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized parseFrom(
+  public static org.dhbw.ka.ml.petritest.eval.protobuf.Category parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized parseFrom(
+  public static org.dhbw.ka.ml.petritest.eval.protobuf.Category parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized parseFrom(
+  public static org.dhbw.ka.ml.petritest.eval.protobuf.Category parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized parseFrom(
+  public static org.dhbw.ka.ml.petritest.eval.protobuf.Category parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized parseFrom(byte[] data)
+  public static org.dhbw.ka.ml.petritest.eval.protobuf.Category parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized parseFrom(
+  public static org.dhbw.ka.ml.petritest.eval.protobuf.Category parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized parseFrom(java.io.InputStream input)
+  public static org.dhbw.ka.ml.petritest.eval.protobuf.Category parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized parseFrom(
+  public static org.dhbw.ka.ml.petritest.eval.protobuf.Category parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized parseDelimitedFrom(java.io.InputStream input)
+  public static org.dhbw.ka.ml.petritest.eval.protobuf.Category parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized parseDelimitedFrom(
+  public static org.dhbw.ka.ml.petritest.eval.protobuf.Category parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized parseFrom(
+  public static org.dhbw.ka.ml.petritest.eval.protobuf.Category parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized parseFrom(
+  public static org.dhbw.ka.ml.petritest.eval.protobuf.Category parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -226,7 +324,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized prototype) {
+  public static Builder newBuilder(org.dhbw.ka.ml.petritest.eval.protobuf.Category prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -242,26 +340,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code tutorial.ProductOrdersMinimized}
+   * Protobuf type {@code tutorial.Category}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:tutorial.ProductOrdersMinimized)
-      org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimizedOrBuilder {
+      // @@protoc_insertion_point(builder_implements:tutorial.Category)
+      org.dhbw.ka.ml.petritest.eval.protobuf.CategoryOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersProtos.internal_static_tutorial_ProductOrdersMinimized_descriptor;
+      return org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersProtos.internal_static_tutorial_Category_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersProtos.internal_static_tutorial_ProductOrdersMinimized_fieldAccessorTable
+      return org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersProtos.internal_static_tutorial_Category_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized.class, org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized.Builder.class);
+              org.dhbw.ka.ml.petritest.eval.protobuf.Category.class, org.dhbw.ka.ml.petritest.eval.protobuf.Category.Builder.class);
     }
 
-    // Construct using org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized.newBuilder()
+    // Construct using org.dhbw.ka.ml.petritest.eval.protobuf.Category.newBuilder()
     private Builder() {
 
     }
@@ -274,6 +372,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      name_ = "";
+
+      description_ = "";
+
       if (productsBuilder_ == null) {
         products_ = java.util.Collections.emptyList();
       } else {
@@ -287,17 +389,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersProtos.internal_static_tutorial_ProductOrdersMinimized_descriptor;
+      return org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersProtos.internal_static_tutorial_Category_descriptor;
     }
 
     @java.lang.Override
-    public org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized getDefaultInstanceForType() {
-      return org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized.getDefaultInstance();
+    public org.dhbw.ka.ml.petritest.eval.protobuf.Category getDefaultInstanceForType() {
+      return org.dhbw.ka.ml.petritest.eval.protobuf.Category.getDefaultInstance();
     }
 
     @java.lang.Override
-    public org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized build() {
-      org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized result = buildPartial();
+    public org.dhbw.ka.ml.petritest.eval.protobuf.Category build() {
+      org.dhbw.ka.ml.petritest.eval.protobuf.Category result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -305,9 +407,11 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized buildPartial() {
-      org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized result = new org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized(this);
+    public org.dhbw.ka.ml.petritest.eval.protobuf.Category buildPartial() {
+      org.dhbw.ka.ml.petritest.eval.protobuf.Category result = new org.dhbw.ka.ml.petritest.eval.protobuf.Category(this);
       int from_bitField0_ = bitField0_;
+      result.name_ = name_;
+      result.description_ = description_;
       if (productsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           products_ = java.util.Collections.unmodifiableList(products_);
@@ -355,16 +459,24 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized) {
-        return mergeFrom((org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized)other);
+      if (other instanceof org.dhbw.ka.ml.petritest.eval.protobuf.Category) {
+        return mergeFrom((org.dhbw.ka.ml.petritest.eval.protobuf.Category)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized other) {
-      if (other == org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized.getDefaultInstance()) return this;
+    public Builder mergeFrom(org.dhbw.ka.ml.petritest.eval.protobuf.Category other) {
+      if (other == org.dhbw.ka.ml.petritest.eval.protobuf.Category.getDefaultInstance()) return this;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
+      }
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
+        onChanged();
+      }
       if (productsBuilder_ == null) {
         if (!other.products_.isEmpty()) {
           if (products_.isEmpty()) {
@@ -418,9 +530,19 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimized m =
+              name_ = input.readStringRequireUtf8();
+
+              break;
+            } // case 10
+            case 18: {
+              description_ = input.readStringRequireUtf8();
+
+              break;
+            } // case 18
+            case 26: {
+              org.dhbw.ka.ml.petritest.eval.protobuf.Product m =
                   input.readMessage(
-                      org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimized.parser(),
+                      org.dhbw.ka.ml.petritest.eval.protobuf.Product.parser(),
                       extensionRegistry);
               if (productsBuilder_ == null) {
                 ensureProductsIsMutable();
@@ -429,7 +551,7 @@ private static final long serialVersionUID = 0L;
                 productsBuilder_.addMessage(m);
               }
               break;
-            } // case 10
+            } // case 26
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -447,22 +569,174 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.util.List<org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimized> products_ =
+    private java.lang.Object name_ = "";
+    /**
+     * <code>string name = 1;</code>
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string name = 1;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string name = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+      
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object description_ = "";
+    /**
+     * <code>string description = 2;</code>
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string description = 2;</code>
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string description = 2;</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      description_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string description = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+      
+      description_ = getDefaultInstance().getDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string description = 2;</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      description_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<org.dhbw.ka.ml.petritest.eval.protobuf.Product> products_ =
       java.util.Collections.emptyList();
     private void ensureProductsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        products_ = new java.util.ArrayList<org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimized>(products_);
+        products_ = new java.util.ArrayList<org.dhbw.ka.ml.petritest.eval.protobuf.Product>(products_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimized, org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimized.Builder, org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimizedOrBuilder> productsBuilder_;
+        org.dhbw.ka.ml.petritest.eval.protobuf.Product, org.dhbw.ka.ml.petritest.eval.protobuf.Product.Builder, org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrBuilder> productsBuilder_;
 
     /**
-     * <code>repeated .tutorial.ProductMinimized products = 1;</code>
+     * <code>repeated .tutorial.Product products = 3;</code>
      */
-    public java.util.List<org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimized> getProductsList() {
+    public java.util.List<org.dhbw.ka.ml.petritest.eval.protobuf.Product> getProductsList() {
       if (productsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(products_);
       } else {
@@ -470,7 +744,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .tutorial.ProductMinimized products = 1;</code>
+     * <code>repeated .tutorial.Product products = 3;</code>
      */
     public int getProductsCount() {
       if (productsBuilder_ == null) {
@@ -480,9 +754,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .tutorial.ProductMinimized products = 1;</code>
+     * <code>repeated .tutorial.Product products = 3;</code>
      */
-    public org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimized getProducts(int index) {
+    public org.dhbw.ka.ml.petritest.eval.protobuf.Product getProducts(int index) {
       if (productsBuilder_ == null) {
         return products_.get(index);
       } else {
@@ -490,10 +764,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .tutorial.ProductMinimized products = 1;</code>
+     * <code>repeated .tutorial.Product products = 3;</code>
      */
     public Builder setProducts(
-        int index, org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimized value) {
+        int index, org.dhbw.ka.ml.petritest.eval.protobuf.Product value) {
       if (productsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -507,10 +781,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .tutorial.ProductMinimized products = 1;</code>
+     * <code>repeated .tutorial.Product products = 3;</code>
      */
     public Builder setProducts(
-        int index, org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimized.Builder builderForValue) {
+        int index, org.dhbw.ka.ml.petritest.eval.protobuf.Product.Builder builderForValue) {
       if (productsBuilder_ == null) {
         ensureProductsIsMutable();
         products_.set(index, builderForValue.build());
@@ -521,9 +795,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .tutorial.ProductMinimized products = 1;</code>
+     * <code>repeated .tutorial.Product products = 3;</code>
      */
-    public Builder addProducts(org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimized value) {
+    public Builder addProducts(org.dhbw.ka.ml.petritest.eval.protobuf.Product value) {
       if (productsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -537,10 +811,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .tutorial.ProductMinimized products = 1;</code>
+     * <code>repeated .tutorial.Product products = 3;</code>
      */
     public Builder addProducts(
-        int index, org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimized value) {
+        int index, org.dhbw.ka.ml.petritest.eval.protobuf.Product value) {
       if (productsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -554,10 +828,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .tutorial.ProductMinimized products = 1;</code>
+     * <code>repeated .tutorial.Product products = 3;</code>
      */
     public Builder addProducts(
-        org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimized.Builder builderForValue) {
+        org.dhbw.ka.ml.petritest.eval.protobuf.Product.Builder builderForValue) {
       if (productsBuilder_ == null) {
         ensureProductsIsMutable();
         products_.add(builderForValue.build());
@@ -568,10 +842,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .tutorial.ProductMinimized products = 1;</code>
+     * <code>repeated .tutorial.Product products = 3;</code>
      */
     public Builder addProducts(
-        int index, org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimized.Builder builderForValue) {
+        int index, org.dhbw.ka.ml.petritest.eval.protobuf.Product.Builder builderForValue) {
       if (productsBuilder_ == null) {
         ensureProductsIsMutable();
         products_.add(index, builderForValue.build());
@@ -582,10 +856,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .tutorial.ProductMinimized products = 1;</code>
+     * <code>repeated .tutorial.Product products = 3;</code>
      */
     public Builder addAllProducts(
-        java.lang.Iterable<? extends org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimized> values) {
+        java.lang.Iterable<? extends org.dhbw.ka.ml.petritest.eval.protobuf.Product> values) {
       if (productsBuilder_ == null) {
         ensureProductsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -597,7 +871,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .tutorial.ProductMinimized products = 1;</code>
+     * <code>repeated .tutorial.Product products = 3;</code>
      */
     public Builder clearProducts() {
       if (productsBuilder_ == null) {
@@ -610,7 +884,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .tutorial.ProductMinimized products = 1;</code>
+     * <code>repeated .tutorial.Product products = 3;</code>
      */
     public Builder removeProducts(int index) {
       if (productsBuilder_ == null) {
@@ -623,16 +897,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .tutorial.ProductMinimized products = 1;</code>
+     * <code>repeated .tutorial.Product products = 3;</code>
      */
-    public org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimized.Builder getProductsBuilder(
+    public org.dhbw.ka.ml.petritest.eval.protobuf.Product.Builder getProductsBuilder(
         int index) {
       return getProductsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .tutorial.ProductMinimized products = 1;</code>
+     * <code>repeated .tutorial.Product products = 3;</code>
      */
-    public org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimizedOrBuilder getProductsOrBuilder(
+    public org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrBuilder getProductsOrBuilder(
         int index) {
       if (productsBuilder_ == null) {
         return products_.get(index);  } else {
@@ -640,9 +914,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .tutorial.ProductMinimized products = 1;</code>
+     * <code>repeated .tutorial.Product products = 3;</code>
      */
-    public java.util.List<? extends org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimizedOrBuilder> 
+    public java.util.List<? extends org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrBuilder> 
          getProductsOrBuilderList() {
       if (productsBuilder_ != null) {
         return productsBuilder_.getMessageOrBuilderList();
@@ -651,33 +925,33 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .tutorial.ProductMinimized products = 1;</code>
+     * <code>repeated .tutorial.Product products = 3;</code>
      */
-    public org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimized.Builder addProductsBuilder() {
+    public org.dhbw.ka.ml.petritest.eval.protobuf.Product.Builder addProductsBuilder() {
       return getProductsFieldBuilder().addBuilder(
-          org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimized.getDefaultInstance());
+          org.dhbw.ka.ml.petritest.eval.protobuf.Product.getDefaultInstance());
     }
     /**
-     * <code>repeated .tutorial.ProductMinimized products = 1;</code>
+     * <code>repeated .tutorial.Product products = 3;</code>
      */
-    public org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimized.Builder addProductsBuilder(
+    public org.dhbw.ka.ml.petritest.eval.protobuf.Product.Builder addProductsBuilder(
         int index) {
       return getProductsFieldBuilder().addBuilder(
-          index, org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimized.getDefaultInstance());
+          index, org.dhbw.ka.ml.petritest.eval.protobuf.Product.getDefaultInstance());
     }
     /**
-     * <code>repeated .tutorial.ProductMinimized products = 1;</code>
+     * <code>repeated .tutorial.Product products = 3;</code>
      */
-    public java.util.List<org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimized.Builder> 
+    public java.util.List<org.dhbw.ka.ml.petritest.eval.protobuf.Product.Builder> 
          getProductsBuilderList() {
       return getProductsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimized, org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimized.Builder, org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimizedOrBuilder> 
+        org.dhbw.ka.ml.petritest.eval.protobuf.Product, org.dhbw.ka.ml.petritest.eval.protobuf.Product.Builder, org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrBuilder> 
         getProductsFieldBuilder() {
       if (productsBuilder_ == null) {
         productsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimized, org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimized.Builder, org.dhbw.ka.ml.petritest.eval.protobuf.ProductMinimizedOrBuilder>(
+            org.dhbw.ka.ml.petritest.eval.protobuf.Product, org.dhbw.ka.ml.petritest.eval.protobuf.Product.Builder, org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrBuilder>(
                 products_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
@@ -699,23 +973,23 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:tutorial.ProductOrdersMinimized)
+    // @@protoc_insertion_point(builder_scope:tutorial.Category)
   }
 
-  // @@protoc_insertion_point(class_scope:tutorial.ProductOrdersMinimized)
-  private static final org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:tutorial.Category)
+  private static final org.dhbw.ka.ml.petritest.eval.protobuf.Category DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized();
+    DEFAULT_INSTANCE = new org.dhbw.ka.ml.petritest.eval.protobuf.Category();
   }
 
-  public static org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized getDefaultInstance() {
+  public static org.dhbw.ka.ml.petritest.eval.protobuf.Category getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ProductOrdersMinimized>
-      PARSER = new com.google.protobuf.AbstractParser<ProductOrdersMinimized>() {
+  private static final com.google.protobuf.Parser<Category>
+      PARSER = new com.google.protobuf.AbstractParser<Category>() {
     @java.lang.Override
-    public ProductOrdersMinimized parsePartialFrom(
+    public Category parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -734,17 +1008,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<ProductOrdersMinimized> parser() {
+  public static com.google.protobuf.Parser<Category> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ProductOrdersMinimized> getParserForType() {
+  public com.google.protobuf.Parser<Category> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public org.dhbw.ka.ml.petritest.eval.protobuf.ProductOrdersMinimized getDefaultInstanceForType() {
+  public org.dhbw.ka.ml.petritest.eval.protobuf.Category getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

@@ -16,7 +16,7 @@ public class DeserializationEval {
         var measuredDurations = new long[Constants.NUMBER_OF_DESERIALIZATION_ITERATIONS];
         for (int i = 0; i < Constants.NUMBER_OF_DESERIALIZATION_ITERATIONS; i++) {
             var begin = System.nanoTime();
-            var test = ProductOrdersMinimized.deserialize(serialized);
+            var test = ProductCatalog.deserialize(serialized);
             var end = System.nanoTime();
             var duration = end - begin;
             measuredDurations[i] = duration;

@@ -8,65 +8,81 @@ public interface ProductOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string brand = 1;</code>
-   * @return The brand.
-   */
-  java.lang.String getBrand();
-  /**
-   * <code>string brand = 1;</code>
-   * @return The bytes for brand.
-   */
-  com.google.protobuf.ByteString
-      getBrandBytes();
-
-  /**
-   * <code>double price = 2;</code>
-   * @return The price.
-   */
-  double getPrice();
-
-  /**
-   * <code>double weight = 3;</code>
-   * @return The weight.
-   */
-  double getWeight();
-
-  /**
-   * <code>int32 amount = 4;</code>
-   * @return The amount.
-   */
-  int getAmount();
-
-  /**
-   * <code>string name = 5;</code>
+   * <code>string name = 1;</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
-   * <code>string name = 5;</code>
+   * <code>string name = 1;</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
 
   /**
+   * <code>string brand = 2;</code>
+   * @return The brand.
+   */
+  java.lang.String getBrand();
+  /**
+   * <code>string brand = 2;</code>
+   * @return The bytes for brand.
+   */
+  com.google.protobuf.ByteString
+      getBrandBytes();
+
+  /**
+   * <code>sint32 price = 3;</code>
+   * @return The price.
+   */
+  int getPrice();
+
+  /**
+   * <code>double weight = 4;</code>
+   * @return The weight.
+   */
+  double getWeight();
+
+  /**
+   * <code>bool available = 5;</code>
+   * @return The available.
+   */
+  boolean getAvailable();
+
+  /**
+   * <pre>
+   * Person owner = 7;
+   * </pre>
+   *
    * <code>repeated string colors = 6;</code>
    * @return A list containing the colors.
    */
   java.util.List<java.lang.String>
       getColorsList();
   /**
+   * <pre>
+   * Person owner = 7;
+   * </pre>
+   *
    * <code>repeated string colors = 6;</code>
    * @return The count of colors.
    */
   int getColorsCount();
   /**
+   * <pre>
+   * Person owner = 7;
+   * </pre>
+   *
    * <code>repeated string colors = 6;</code>
    * @param index The index of the element to return.
    * @return The colors at the given index.
    */
   java.lang.String getColors(int index);
   /**
+   * <pre>
+   * Person owner = 7;
+   * </pre>
+   *
    * <code>repeated string colors = 6;</code>
    * @param index The index of the value to return.
    * @return The bytes of the colors at the given index.
