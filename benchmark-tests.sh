@@ -5,7 +5,7 @@ BIN_PATH=/tmp/petri-test.jar
 echo "-------------------------------------------------------------------------"
 echo "download petri-test.jar to $BIN_PATH"
 echo "-------------------------------------------------------------------------"
-curl https://github.com/LeonMue/petri-test/releases/download/petri-testv1.0/petri-test.jar --output $BIN_PATH
+curl -L https://github.com/LeonMue/petri-test/releases/download/petri-testv1.0/petri-test.jar --output $BIN_PATH
 
 echo "-------------------------------------------------------------------------"
 echo "Execute Evaluation-Test"
