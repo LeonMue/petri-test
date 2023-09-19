@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BIN_PATH=tmp/petri-test.jar
+BIN_PATH=/tmp/petri-test.jar
 
 echo "-------------------------------------------------------------------------"
 echo "download petri-test.jar to $BIN_PATH"
