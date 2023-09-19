@@ -16,10 +16,16 @@ public class DeserializationEval {
 
         System.out.println("Protobuf message has size of " + sizeOfSerialized + " bytes.");
 
+        System.out.println("");
+        // -------------------------------------------------------------------------------------------------------------
+        System.out.println("Deserializing with ByteArrayInputStream:");
+        System.out.println("----------------------------------------");
+
         var measuredDurations = new long[Constants.NUMBER_OF_DESERIALIZATION_ITERATIONS];
         for (int i = 0; i < Constants.NUMBER_OF_DESERIALIZATION_ITERATIONS; i++) {
             var begin = System.nanoTime();
-            var serializedStream = new PetriReader(serialized);
+            // var serializedStream = new PetriReader(serialized);
+            final var serializedStream = new ByteArrayInputStream(serialized);
             var test = ProductCatalog.parseFrom(serializedStream);
             var end = System.nanoTime();
             var duration = end - begin;
@@ -31,6 +37,27 @@ public class DeserializationEval {
         var medianFirst = sortedDurations[(Constants.NUMBER_OF_DESERIALIZATION_ITERATIONS / 2) - 1];
         var medianSecond = sortedDurations[Constants.NUMBER_OF_DESERIALIZATION_ITERATIONS / 2];
         var medianDuration = (medianFirst + medianSecond) / 2.;
+        System.out.println("Protobuf message needed " + averageDuration + " nano seconds to deserialize in average.");
+        System.out.println("Median is " + medianDuration + " nano seconds per deserializing.");
+
+        System.out.println("");
+        // -------------------------------------------------------------------------------------------------------------
+        System.out.println("Deserializing with PetriReader:");
+        System.out.println("-------------------------------");
+        for (int i = 0; i < Constants.NUMBER_OF_DESERIALIZATION_ITERATIONS; i++) {
+            var begin = System.nanoTime();
+            final var serializedStream = new PetriReader(serialized);
+            var test = ProductCatalog.parseFrom(serializedStream);
+            var end = System.nanoTime();
+            var duration = end - begin;
+            measuredDurations[i] = duration;
+        }
+
+        averageDuration = Arrays.stream(measuredDurations).average().getAsDouble();
+        sortedDurations = Arrays.stream(measuredDurations).sorted().toArray();
+        medianFirst = sortedDurations[(Constants.NUMBER_OF_DESERIALIZATION_ITERATIONS / 2) - 1];
+        medianSecond = sortedDurations[Constants.NUMBER_OF_DESERIALIZATION_ITERATIONS / 2];
+        medianDuration = (medianFirst + medianSecond) / 2.;
         System.out.println("Protobuf message needed " + averageDuration + " nano seconds to deserialize in average.");
         System.out.println("Median is " + medianDuration + " nano seconds per deserializing.");
     }
