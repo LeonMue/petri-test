@@ -1,14 +1,11 @@
 #!/bin/bash
 
-mvn clean package assembly:single
-mv target/petri-test-1.0-SNAPSHOT-jar-with-dependencies.jar target/petri-test.jar
-#BIN_PATH=target/petri-test-1.0-SNAPSHOT-jar-with-dependencies.jar
-BIN_PATH=target/petri-test.jar
+BIN_PATH=tmp/petri-test.jar
 
-#echo "-------------------------------------------------------------------------"
-#echo "download petri-test.jar to $BIN_PATH"
-#echo "-------------------------------------------------------------------------"
-#curl https://github.com/LeonMue/petri-test/releases/download/petri-testv1.0/petri-test-1.0-SNAPSHOT.jar --output $BIN_PATH
+echo "-------------------------------------------------------------------------"
+echo "download petri-test.jar to $BIN_PATH"
+echo "-------------------------------------------------------------------------"
+curl https://github.com/LeonMue/petri-test/releases/download/petri-testv1.0/petri-test.jar --output $BIN_PATH
 
 echo "-------------------------------------------------------------------------"
 echo "Execute Evaluation-Test"
